@@ -1,9 +1,11 @@
 #!/bin/sh -e
 
-iptables -F 
+iptables -F
 iptables -F -t nat
 iptables -X
 
-iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+# ethX connects router to "Internet" via NAT
+
+#iptables -t nat -A POSTROUTING -o ethX -j MASQUERADE
 
 exit 0
